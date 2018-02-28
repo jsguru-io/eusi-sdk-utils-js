@@ -2,6 +2,14 @@ const Media = data => {
 
     data = data || [];
 
+    data.forEach(entry => {
+        if (entry.type === 'external') {
+            Object.assign(entry, {
+                embed_url: entry.url.replace('watch?v=', 'embed/')
+            });
+        }
+    });
+
     const all = () => {
         return data;
     };
@@ -18,14 +26,12 @@ const Media = data => {
 
 const Taxonomy = data => {
 
-    data = data || [];
-
-    const all = () => {
-        return data;
+    const items = () => {
+        return data.taxonomy_items;
     };
 
     return {
-        all
+        items
     };
 };
 
