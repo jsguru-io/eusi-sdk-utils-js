@@ -69,6 +69,7 @@ const pretty = (obj) => {
 }
 
 let model = Model(context);
-console.log(pretty(model.value('intro')));
-console.log(pretty(model.taxonomy('category').items()));
-console.log(pretty(model.media('photo').first()));
+// console.log(pretty(model.value('intro')));
+console.log(pretty(model.taxonomy('category').info()));
+// console.log(pretty(model.media('photo')));
+// console.log(pretty(model));
