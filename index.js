@@ -1,4 +1,4 @@
-import {Model} from "./lib/model";
+const Model = require('./dist/cjs/eusi-sdk-utils');
 
 let context = {
     name: 'courses',
@@ -7,7 +7,6 @@ let context = {
         value: 'Some title'
     }]
 };
-
 
 let model = Model(context);
 console.log(model.value('title'));
