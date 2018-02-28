@@ -1,0 +1,24 @@
+{
+  "name": "eusi-sdk-utils-js",
+  "version": "1.0.0",
+  "description": "Utilities helping developers to easily create view models for node app using Eusi SDK",
+  "main": "index.js",
+  "dependencies": {
+    "eusi-sdk-core": "^1.0.1",
+    "eusi-sdk-node": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsguru-io/eusi-sdk-utils-js.git"
+  },
+  "author": "Eusi & JSGuru Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsguru-io/eusi-sdk-utils-js/issues"
+  },
+  "homepage": "https://github.com/jsguru-io/eusi-sdk-utils-js#readme"
+}
