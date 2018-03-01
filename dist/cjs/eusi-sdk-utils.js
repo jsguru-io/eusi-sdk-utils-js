@@ -62,12 +62,12 @@ const Single = context => {
 
     const media = key => {
         let property = prop(key);
-        return property ? Media(property) : null;
+        return property ? Media(property) : Media({});
     };
 
     const taxonomy = key => {
         let property = prop(key);
-        return property ? Taxonomy(property) : null;
+        return property ? Taxonomy(property) : Taxonomy({});
     };
 
     return Object.assign({}, context, {
