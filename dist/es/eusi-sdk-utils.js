@@ -1,8 +1,11 @@
+import moment from 'moment';
+
 const Media = data => {
 
     data = data || {};
     data.media = data.media || [];
 
+    // TODO: This is a hack for the youtube watch to embed correction
     data.media.forEach(entry => {
         if (entry.type === 'external') {
             Object.assign(entry, {
@@ -19,9 +22,14 @@ const Media = data => {
         return data.media[0];
     };
 
+    const exist = () => {
+        return data.media.length;
+    };
+
     return Object.assign({}, data, {
         all,
-        first
+        first,
+        exist
     });
 };
 
@@ -41,6 +49,23 @@ const Taxonomy = data => {
     return Object.assign({}, data, {
         info,
         items
+    });
+};
+
+const DateTime = data => {
+    data = data || {};
+
+    const format = (pattern = "MMMM Do YYYY") => {
+        return moment(data.value).format(pattern);
+    };
+
+    const value = () => {
+        return data.value;
+    };
+
+    return Object.assign({}, data, {
+        format,
+        value
     });
 };
 
@@ -68,10 +93,16 @@ const Single = context => {
         return property ? Taxonomy(property) : Taxonomy({});
     };
 
+    const date = key => {
+        let property = prop(key);
+        return property ? DateTime(property) : DateTime({});
+    };
+
     return Object.assign({}, context, {
         value,
         media,
         taxonomy,
+        date,
         prop
     });
 };

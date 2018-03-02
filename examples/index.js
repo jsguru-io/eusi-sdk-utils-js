@@ -1,4 +1,4 @@
-const Model = require('./dist/cjs/eusi-sdk-utils');
+const Model = require('../dist/cjs/eusi-sdk-utils');
 
 let context = {
         "id": "5e8af23f-5728-4097-a22a-4200c182b712",
